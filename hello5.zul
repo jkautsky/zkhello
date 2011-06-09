@@ -1,0 +1,18 @@
+<zk>
+	<window title="My First Window" border="normal" width="400px" id="win"
+		apply="sample.SampleControl">
+		<label value="Enter your name:" />
+		<textbox width="60%" id="username">
+			<attribute name="onChanging"><![CDATA[
+			
+			if (event.getValue().length() >0 && event.getValue().trim().length() >0){
+				buttonToSayHello.setVisible(true);
+				}
+				]]></attribute>
+			</textbox>
+			
+			<button id="buttonToSayHello" label=" Say Hello" visible="false">				
+			</button>
+	</window>
+	
+</zk>

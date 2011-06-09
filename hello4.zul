@@ -1,0 +1,28 @@
+<zk>
+	<window title="My First Window" border="normal" width="400px" id="win">
+		<label value="Enter your name:" />
+		<textbox width="60%" id="username">
+			<attribute name="onChanging"><![CDATA[
+			
+			if (event.getValue().length() >0 && event.getValue().trim().length() >0){
+				buttonToSayHello.setVisible(true);
+				}
+				]]></attribute>
+			</textbox>
+			
+			<button id="buttonToSayHello" label=" Say Hello" visible="false">				
+			</button>
+	</window>
+	
+	<zscript>
+		import org.zkoss.zk.ui.event.Event;
+		import org.zkoss.zk.ui.event.EventListener;
+		
+		Path.getComponent("/win/buttonToSayHello").addEventListener("onClick", new EventListener() {
+			public void onEvent(Event event) {
+				System.out.println("button clicked!");
+				alert("Button clicked!");
+				}
+			});
+	</zscript>
+</zk>

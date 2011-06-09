@@ -1,0 +1,19 @@
+<zk>
+
+	<?init class="sample.InitSample"?>
+	<zscript><![CDATA[
+	
+		import java.util.Date;
+		Date now = new Date();
+		int yearNow = now.getYear();
+	]]></zscript>
+	
+	<window title="Hello" border="normal">
+		Hello, it is now:  ${now} - ${now.year}
+	</window>
+	
+	<zscript><![CDATA[
+		System.out.println(now.getYear());
+	 ]]></zscript>
+
+</zk>
